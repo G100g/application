@@ -6,8 +6,33 @@ var logger       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var moment       = require('moment');
+var i18next      = require("i18next");
+var FilesystemBackend      = require("i18next-node-fs-backend");
+const i18nextMiddleware = require("i18next-express-middleware");
+
+i18next
+  .use(FilesystemBackend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    detection: {
+      order: ['session'],
+    },
+    backend: {
+      loadPath: __dirname + '/locales/{{lng}}/{{ns}}.json',
+      addPath: __dirname + '/locales/{{lng}}/{{ns}}.missing.json'
+    },
+    fallbackLng: 'en',
+    preload: ['en', 'it'],
+    ns: ["translation", "settings", "calendar", "team", "requests"],    
+    fallbackNS: 'translation',
+    saveMissing: true
+  
+  });
+
 
 var app = express();
+
+
 
 // View engine setup
 var handlebars = require('express-handlebars')
@@ -23,6 +48,7 @@ app.set('view engine', '.hbs');
 // Add single reference to the model into application object
 // and reuse it whenever an access to DB is needed
 app.set('db_model', require('./lib/model/db'));
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -51,8 +77,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 // Custom middlewares
 //
 // Make sure session and user objects are available in templates
@@ -62,7 +86,13 @@ app.use(function(req,res,next){
   var today;
 
   if ( req.user && req.user.company ) {
+
+    if (moment.locale() !== req.user.company.language) {
+      moment.locale(req.user.company.language);
+    }
+
     today = req.user.company.get_today();
+    req.session.lng = req.user.company.language;
   } else {
     today = moment.utc();
   }
@@ -94,6 +124,9 @@ app.use(function(req,res,next){
 app.use( require('./lib/middleware/flash_messages') );
 
 app.use( require('./lib/middleware/session_aware_redirect') );
+
+// Enable localization
+app.use(i18nextMiddleware.handle(i18next));
 
 // Here will be publicly accessible routes
 
