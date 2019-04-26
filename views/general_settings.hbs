@@ -2,9 +2,9 @@
 
 {{> header }}
 
-<h1>General settings</h1>
+<h1>{{t "settings:title" }}</h1>
 
-<p class="lead">Account main settings</p>
+<p class="lead">{{t "settings:subtitle" }}</p>
 
 {{> show_flash_messages }}
 
@@ -14,7 +14,7 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Company
+        {{t "settings:company" }}
       </div>
       <div class="panel-body">
         <div class="row">
@@ -22,13 +22,13 @@
           <div class="col-md-5">
             <form class="form-horizontal" method="POST" action="/settings/company/" id="company_edit_form">
               <div class="form-group">
-                <label for="input_company_name" class="col-md-4 control-label">Company name</label>
+                <label for="input_company_name" class="col-md-4 control-label">{{ t "settings:company_name" }}</label>
                 <div class="col-md-8">
                   <input class="form-control" id="input_company_name" placeholder="Our company name" value="{{company.name}}" name="name">
                 </div>
               </div>
               <div class="form-group">
-                <label for="input_country" class="col-md-4 control-label">Country</label>
+                <label for="input_country" class="col-md-4 control-label">{{ t "settings:country" }}</label>
                 <div class="col-md-8">
                   <select class="form-control" id="input_country" name="country">
                     {{#each countries}}
@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="input_date_format" class="col-md-4 control-label">Date format</label>
+                <label for="input_date_format" class="col-md-4 control-label">{{ t "settings:date_format" }}</label>
                 <div class="col-md-8">
                   <select class="form-control" id="input_date_format" name="date_format">
                     {{#with company}}
@@ -52,7 +52,7 @@
 
 
               <div class="form-group">
-                <label for="input_time_zone" class="col-md-4 control-label">Time zone</label>
+                <label for="input_time_zone" class="col-md-4 control-label">{{ t "settings:time_zone" }}</label>
                 <div class="col-md-8">
                   <select class="form-control" id="input_time_zone" name="timezone">
                     {{#each timezones_available}}
@@ -62,9 +62,19 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <label for="input_language" class="col-md-4 control-label">{{ t "settings:language" }}</label>
+                <div class="col-md-8">
+                  <select class="form-control" id="input_language" name="language">
+                    {{#each language_available}}
+                     <option value="{{@key}}" {{# if_equal @key ../company.language }} selected="selected"{{/if_equal}}>{{this.name}} ({{@key}})</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
 
               <div class="form-group">
-                <label for="input_carry_over" class="col-md-4 control-label">Carried over days</label>
+                <label for="input_carry_over" class="col-md-4 control-label">{{ t "settings:carried_over_days" }}</label>
                 <div class="col-md-8">
                   <select class="form-control" id="input_carry_over" name="carry_over">
                     {{#each carryOverOptions}}
@@ -72,7 +82,7 @@
                     {{/each}}
                   </select>
                     <p>
-                      <em>Number of days in employee allowance that are carried over to the next year.</em>
+                      <em>{{ t "settings:carried_over_days_info" }}</em>
                     </p>
                 </div>
               </div>
@@ -82,17 +92,17 @@
                 <div class="col-md-offset-4 col-md-8">
                   <div class="checkbox">
                     <label for="share-all-absences">
-                      <input id="share-all-absences" type="checkbox" name="share_all_absences" {{# if company.share_all_absences }} checked="checked"{{/if}}>Share absences between employees
+                      <input id="share-all-absences" type="checkbox" name="share_all_absences" {{# if company.share_all_absences }} checked="checked"{{/if}}>{{ t "settings:share_absences" }}
                     </label>
                     <p>
-                      <em>If enabled all employees can see information about everybody's absences regardless departments.</em>
+                      <em>{{ t "settings:share_absences_info" }}</em>
                     </p>
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                  <button type="submit" class="btn btn-success pull-right">Save changes</button>
+                  <button type="submit" class="btn btn-success pull-right">{{ t "settings:save_changes" }}</button>
                 </div>
               </div>
             </form>
@@ -102,16 +112,16 @@
 
             <div class="form-horizontal">
               <div class="form-group">
-                <label for="" class="col-md-7 control-label">Backup employees' leave data</label>
+                <label for="" class="col-md-7 control-label">{{ t "settings:backup_leave" }}</label>
               </div>
               <div class="form-group">
                 <div class="col-md-offset-2">
-                  <em>Download the full list of employees with all their leave requests. The file is in <strong>.CSV</strong> format which is compatible with MS Excel.</em>
+                  <em>{{{ t "settings:backup_leave_desc" }}}</em>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-md-offset-2 col-md-11">
-                  <a class="btn btn-success pull-right" href="/settings/company/backup/"><i class="fa fa-download"></i> Download backup</a>
+                  <a class="btn btn-success pull-right" href="/settings/company/backup/"><i class="fa fa-download"></i> {{ t "settings:save_schedule" }}</a>
                 </div>
               </div>
             </div>
@@ -119,7 +129,7 @@
             <form class="form-horizontal" method="POST" action="/settings/schedule" id="company_schedule_form">
             <input type="hidden" name="company_wide" value="1">
             <div class="form-group">
-              <label for="" class="col-md-6 control-label">Company week schedule</label>
+              <label for="" class="col-md-6 control-label">{{ t "settings:company_week_schedule" }}</label>
             </div>
             <div class="form-group">
               <div class="col-md-offset-2">
@@ -128,29 +138,29 @@
             </div>
             <div class="form-group">
               <div class="col-md-offset-2">
-                <em>Define company wide weekly schedule. Press correspondent button to toggle working/non-working day.</em>
+                <em>{{ t "settings:company_week_schedule_desc" }}</em>
               </div>
             </div>
             <div class="form-group">
               <div class="col-md-offset-2 col-md-11">
-                <button type="submit" class="btn btn-success pull-right">Save schedule</button>
+                <button type="submit" class="btn btn-success pull-right">{{ t "settings:save_schedule" }}</button>
               </div>
             </div>
             </form>
 
             <div class="form-horizontal">
               <div class="form-group">
-                <label for="" class="col-md-10 control-label">Calculate and carry over unused allowance</label>
+                <label for="" class="col-md-10 control-label">{{ t "settings:calculate_carry_over" }}</label>
               </div>
               <div class="form-group">
                 <div class="col-md-offset-2">
-                  <p><em>This action will carry over unused allowance for each employee from <strong>{{yearPrev}}</strong> to the current year, <strong>{{yearCurrent}}</strong>.</em></p>
-                  <p><em>Please note, employees allowance is going to be updated.</em></p>
+                  <p><em>{{ t "settings:calculate_carry_over_desc" (object yearPrev=yearPrev yearCurrent=yearCurrent) }}</em></p>                  
                 </div>
               </div>
               <div class="form-group">
                 <form class="col-md-offset-2 col-md-11" id="calculate_carry_over_form" method="post" action="/settings/carryOverUnusedAllowance">
-                  <button class="btn btn-success pull-right" type="submit"><i class="fa fa-share"></i> Carry over allowance</button>
+                  <button class="btn btn-success pull-right" type="submit"><i class="fa fa-share"></i> {{ t "settings:carry_over_allowance" }}
+                  </button>
                 </form>
               </div>
             </div>
@@ -167,7 +177,7 @@
   <div class="col-md-5">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Bank Holidays
+        {{ t "bank_holidays" }}
       </div>
       <div class="panel-body">
         <form id="delete_bankholiday_form" method="post" action="/settings/bankholidays/delete/"></form>
@@ -175,15 +185,15 @@
         <form id="update_bankholiday_form" method="post" action="/settings/bankholidays/">
 
         <div class="row">
-          <div class="col-md-4"><label class="control-label">Date</label></div>
-          <div class="col-md-6"><label class="control-label">Holiday Name</label></div>
+          <div class="col-md-4"><label class="control-label">{{ t "date" }}</label></div>
+          <div class="col-md-6"><label class="control-label">{{ t "settings:holiday_name" }}</label></div>
         </div>
 
         <div class="row">&nbsp;</div>
 
         {{# unless company.bank_holidays.length }}
         <div class="row">
-          <div class="col-md-4 tst-no-bank-holidays">No Bank holiday records</div>
+          <div class="col-md-4 tst-no-bank-holidays">{{ t "settings:no_bank_holiday_records" }}</div>
         </div>
         {{/unless}}
 
@@ -215,9 +225,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="pull-right">
-              <button id="bankholiday-import-btn" class="btn btn-default" type="button">Import default holidays</button>
-              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#add_new_bank_holiday_modal" id="add_new_bank_holiday_btn">Add new</button>
-              <button type="submit" class="btn btn-success">Save changes</button>
+              <button id="bankholiday-import-btn" class="btn btn-default" type="button">{{ t "settings:import_default_holidays" }}</button>
+              <button class="btn btn-default" type="button" data-toggle="modal" data-target="#add_new_bank_holiday_modal" id="add_new_bank_holiday_btn">{{ t "add_new" }}</button>
+              <button type="submit" class="btn btn-success">{{ t "save_changes" }}</button>
             </div>
           </div>
         </div>
@@ -233,19 +243,19 @@
     <div class="panel panel-default">
 
       <div class="panel-heading">
-        Leave Types
+        {{ t "settings:leave_types" }}
       </div>
 
       <div class="panel-body">
 
         <div class="row">
           <div class="col-md-6">
-            <label class="control-label">Leave Type Name</label>
-            <p><em>Tick one to always be on top of the list</em></p>
+            <label class="control-label">{{ t "settings:leave_type_name" }}</label>
+            <p><em>{{ t "settings:leave_type_name_desc" }}</em></p>
           </div>
           <div class="col-md-offset-3 col-md-2">
-            <label class="control-label">Limit</label>
-            <p><em>Days/year</em></p>
+            <label class="control-label">{{ t "settings:limit" }}</label>
+            <p><em>{{ t "settings:days_year" }}</em></p>
           </div>
         </div>
 
@@ -256,7 +266,7 @@
 
         {{# unless company.leave_types.length }}
         <div class="row">
-          <div class="col-md-4">No Leave type records</div>
+          <div class="col-md-4">{{ t "settings:no_leave_type_records" }}</div>
         </div>
         {{/unless}}
 
@@ -275,11 +285,11 @@
                 <input type="hidden" name="color__{{ this.id }}" value="{{# with this }}{{ this.get_color_class }}{{/with}}">
                 <button type="button" class="btn btn-default dropdown-toggle {{# with this }}{{ this.get_color_class }}{{/with}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-paint-brush"></i></button>
                 <ul class="dropdown-menu">
-                  <li><a href="#" class="btn btd-default leave_type_color_1" data-tom-color-picker-css-class="leave_type_color_1">Color 1</a></li>
-                  <li><a href="#" class="btn btd-default leave_type_color_2" data-tom-color-picker-css-class="leave_type_color_2">Color 2</a></li>
-                  <li><a href="#" class="btn btd-default leave_type_color_3" data-tom-color-picker-css-class="leave_type_color_3">Color 3</a></li>
-                  <li><a href="#" class="btn btd-default leave_type_color_4" data-tom-color-picker-css-class="leave_type_color_4">Color 4</a></li>
-                  <li><a href="#" class="btn btd-default leave_type_color_5" data-tom-color-picker-css-class="leave_type_color_5">Color 5</a></li>
+                  <li><a href="#" class="btn btd-default leave_type_color_1" data-tom-color-picker-css-class="leave_type_color_1">{{ t "settings:color_" (object num="1") }}</a></li>
+                  <li><a href="#" class="btn btd-default leave_type_color_2" data-tom-color-picker-css-class="leave_type_color_2">{{ t "settings:color_" (object num="2") }}</a></li>
+                  <li><a href="#" class="btn btd-default leave_type_color_3" data-tom-color-picker-css-class="leave_type_color_3">{{ t "settings:color_" (object num="3") }}</a></li>
+                  <li><a href="#" class="btn btd-default leave_type_color_4" data-tom-color-picker-css-class="leave_type_color_4">{{ t "settings:color_" (object num="4") }}</a></li>
+                  <li><a href="#" class="btn btd-default leave_type_color_5" data-tom-color-picker-css-class="leave_type_color_5">{{ t "settings:color_" (object num="5") }}</a></li>
                 </ul>
               </div>
 
@@ -288,7 +298,7 @@
           </div>
           <div class="col-md-3">
             <input name="use_allowance__{{ this.id }}" id="use_allowance__{{ this.id }}" type="checkbox" {{#if use_allowance}}checked="checked"{{/if}} data-tom-leave-type-order="allowance_{{@index}}">
-            <label for="use_allowance__{{ this.id }}" class="control-label">Use allowance</label>
+            <label for="use_allowance__{{ this.id }}" class="control-label">{{ t "use_allowance" }}</label>
           </div>
           <div class="col-md-2">
             <input type="number" class="form-control" value="{{limit}}" name="limit__{{ this.id }}" data-tom-leave-type-order="limit_{{@index}}">
@@ -307,8 +317,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="pull-right">
-              <button class="btn btn-default" data-toggle="modal" data-target="#add_new_leave_type_modal" type="button" id="add_new_leave_type_btn">Add new</button>
-              <button type="submit" class="btn btn-success">Save changes</button>
+              <button class="btn btn-default" data-toggle="modal" data-target="#add_new_leave_type_modal" type="button" id="add_new_leave_type_btn">{{ t "add_new" }}</button>
+              <button type="submit" class="btn btn-success">{{ t "settings:save_changes" }}</button>
             </div>
           </div>
         </div>
@@ -325,7 +335,7 @@
   <div class="col-md-12">
     <div class="panel panel-danger">
       <div class="panel-heading">
-        <i class="fa fa-bomb"></i> Danger zone
+        <i class="fa fa-bomb"></i> {{ t "settings:danger_zone" }}
       </div>
       <div class="panel-body">
 
@@ -333,16 +343,16 @@
 
             <div class="form-horizontal">
               <div class="form-group">
-                <label for="" class="control-label">Remove company account</label>
+                <label for="" class="control-label">{{ t "settings:remove_company_account" }}</label>
               </div>
               <div class="form-group">
                 <div class="col-md-6">
-                  <p><em>Completely erase data associated with {{company.name}}'s account.</em></p>
-                  <p><em> This is action cannot be reverted.</em></p>
-                  <p><em> It is strongly recommended to <a href="/settings/company/backup/">download</a> employees leave data first.</em></p>
+                  <p><em>{{ t "settings:danger_zone_desc" (object companyname=company.name) }}</em></p>
+                  <p><em>{{ t "settings:danger_zone_desc_2" }}</em></p>
+                  <p><em>{{{ t "settings:danger_zone_desc_3" (object url="/settings/company/backup/") }}}</em></p>
                 </div>
                 <div class="col-md-6">
-                  <button class="btn btn-danger pull-right" data-toggle="modal" data-target="#remove_company_modal" type="button"><i class="fa fa-remove"></i> Delete company account</button>
+                  <button class="btn btn-danger pull-right" data-toggle="modal" data-target="#remove_company_modal" type="button"><i class="fa fa-remove"></i> {{ t "settings:delete_company_account" }}</button>
                 </div>
               </div>
             </div>
