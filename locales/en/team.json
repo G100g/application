@@ -1,0 +1,7 @@
+{
+    "team_view_title": "Team View",
+    "team_of": "{{name}} {{lastname}}'s team",
+    "all_departments": "All departments",
+    "all": "All",
+    "used_leave_tip": "In {{ month_year }} {{ name }} {{ lastname }} used {{ days }} days from allowance"
+}

@@ -9,18 +9,18 @@
 }}
 
 <dl>
-  <dt>Allowance breakdown
+  <dt>{{ t "calendar:allowance_breakdown" }}
     <i class="fa fa-question-circle"
-      data-content="This is explanation how we get the total allowance. Hover on each number to get details what does one mean."
+      data-content="{{ t "calendar:allowance_breakdown_tip" }}"
       data-placement="top"
       data-toggle="popover"
       data-trigger="focus hover"
     ></i>
   </dt>
     <dd>
-      <em>Nominal allowance </em>
+      <em>{{ t "calendar:nominal_allowance" }} </em>
       <span class="pull-right"
-        data-content="Allowance derived from department current user belongs to."
+        data-content="{{ t "calendar:nominal_allowance_tip" }}"
         data-placement="top"
         data-toggle="popover"
         data-trigger="focus hover"
@@ -28,9 +28,9 @@
       >{{ user_allowance.nominal_allowance }}</span>
     </dd>
     <dd>
-      <em>Carried over from {{previous_year}}</em>
+      <em>{{ t "calendar:carried_over" (object previous_year=previous_year) }}</em>
       <span class="pull-right"
-        data-content="Allowance carried over from previous year. Note: this amount is calculated on the very first day of the year."
+        data-content="{{ t "calendar:carried_over_tip" }}"
         data-placement="top"
         data-toggle="popover"
         data-trigger="focus hover"
@@ -38,27 +38,27 @@
       >{{ user_allowance.carry_over }}</span>
     </dd>
     <dd>
-      <em>Individual adjustment</em>
+      <em>{{ t "calendar:individual_adjustment" }}</em>
       <span class="pull-right"
-        data-content="Adjustment to allowance done by admin user."
+        data-content="{{ t "calendar:individual_adjustment_tip" }}"
         data-placement="top"
         data-toggle="popover"
         data-trigger="focus hover"
       >{{ user_allowance.manual_adjustment }}</span>
     </dd>
     <dd>
-      <em>Start/end of employment</em>
+      <em>{{ t "calendar:start_end_of_employment" }}</em>
       <span class="pull-right"
-        data-content="Automatic adjustment to allowance based on employee's start and end day of employment."
+        data-content="{{ t "calendar:start_end_of_employment_tip" }}"
         data-placement="top"
         data-toggle="popover"
         data-trigger="focus hover"
       >{{ user_allowance.employement_range_adjustment }}</span>
     </dd>
     <dd>
-      <em>Used so far</em>
+      <em>{{ t "calendar:used_so_far" }}</em>
       <span class="pull-right"
-        data-content="Number of days already taken from allowance."
+        data-content="{{ t "calendar:used_so_far_tip" }}"
         data-placement="top"
         data-toggle="popover"
         data-trigger="focus hover"
@@ -66,9 +66,9 @@
     </dd>
     {{# if user_allowance.is_accrued_allowance }}
       <dd>
-        <em>Locked so far</em>
+        <em>{{ t "calendar:locked_so_far" }}</em>
         <span class="pull-right"
-          data-content="Number of unavailable days in allowance due to accrual nature of vacation entitlement."
+          data-content="{{ t "calendar:locked_so_far_tip" }}"
           data-placement="top"
           data-toggle="popover"
           data-trigger="focus hover"

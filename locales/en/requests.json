@@ -1,0 +1,7 @@
+{
+    "title": "{{ name }} {{ lastname }} messages",
+    "leave_request_to_approve": "Leave request to approve",
+    "no_leave_requests": "There are no leave requests to decide on.",
+    "all_my_absences": "All my absences",
+    "days_deducted_from_allowance": "Days would be deducted from allowance"
+}

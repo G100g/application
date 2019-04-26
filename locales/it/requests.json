@@ -1,0 +1,7 @@
+{
+    "title": "Messaggi per {{ name }} {{ lastname }}",
+    "leave_request_to_approve": "Richieste da approvare",
+    "no_leave_requests": "Non ci sono richieste su cui decidere.",
+    "all_my_absences": "Tutte le mie assenze",
+    "days_deducted_from_allowance": "Giorni che verranno sottratti dall'indennità"
+}

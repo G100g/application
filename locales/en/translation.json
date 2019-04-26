@@ -1,0 +1,82 @@
+{
+    "scroll_table_horizontally": "Scroll table horizontally",
+    "company": "Company",
+    "save_changes": "Save changes",
+    "add_new": "Add new",
+    "date": "Date",
+    "details": "Details",
+    "supervisor": "Supervisor",
+    "department": "Department",
+    "days": "days",
+    "calendar_week_monday": "M",
+    "calendar_week_tuesday": "T",
+    "calendar_week_wednesday": "W",
+    "calendar_week_thursday": "T",
+    "calendar_week_friday": "F",
+    "calendar_week_saturday": "S",
+    "calendar_week_sunday": "S",
+
+    "save": "Save",
+    "revoke": "Revoke",
+    "approve": "Approve",
+    "reject": "Reject",
+    "create": "Create",
+    "cancel": "Cancel",
+    "rejected": "Rejected",
+    "approved": "Approved",
+    "pending": "Pending",
+
+    "table_head_dates": "Dates (from <i class=\"fa fa-long-arrow-right\"></i> to)",
+    "table_head_type": "Type",
+    "table_head_deducted": "Deducted",
+    "table_head_approved_by": "Approved by",
+    "table_head_status": "Status",
+    "table_head_employee": "Employee",
+    "table_head_department": "Department",
+    "table_head_date_of_request": "Date of request",
+    "table_head_leave_date": "Leave dates",
+    
+
+    "header": {
+        "toggle_navigation": "Toggle navigation",
+        "calendar": "Calendar",
+        "team_view": "Team View",
+        "employees": "Employees",
+        "new_absence": "New absence",
+
+        "general": "General",
+        "departments": "Departments",
+        "ldap_configuration": "LDAP configuration",
+        "api_configuration": "API configuration",
+        "import_employees": "Import employees",
+        "emails_audit": "Emails audit",
+        "reports": "Reports",
+        "requests": "Requests",
+        "login": "Login",
+        "logout": "Logout",
+        "feeds": "Feeds",
+        "me": "Me"
+    },
+
+    "for_employee": "For employee",
+    "leave_type": "Leave type",
+    "from": "From",
+    "to": "To",
+    "all_day": "All day",
+    "afternoon": "Afternoon",
+    "morning": "Morning",
+
+    "comment": "Comment (optional)",
+
+    "employee_email": "Employee email",
+    "password": "Password",
+    "forgot_password": "Forgot password?",
+    "register_new_company": "Register new company",
+
+    "forgot_password_title": "Forgot password",
+    "send_instructions": "Send instructions",
+
+    "reset_password_title": "Reset password",
+    "new_password": "New password",
+    "confirm_new_password": "Confirm new password"
+}

@@ -1,0 +1,7 @@
+{
+    "team_view_title": "Reparti",
+    "team_of": "Colleghi di {{name}} {{lastname}}",
+    "all_departments": "Tutti i reparti",
+    "all": "Tutti",
+    "used_leave_tip": "In {{ month_year }} {{ name }} {{ lastname }} ha usato {{ days }} giorni disponibili"
+}

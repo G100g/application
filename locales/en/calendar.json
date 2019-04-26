@@ -1,0 +1,37 @@
+{
+    "title": "Employee calendar",
+    "page_infos": "{{name}} {{lastname}}'s calendar for {{current_year}}",
+    "statistics_title": "Statistics",
+    "days_available": "Days available",
+    "out_of_allowance": "out of <span data-tom-total-days-in-allowance>{{num}}</span> in allowance",
+    "allowance_breakdown": "Allowance breakdown",
+    "allowance_breakdown_tip": "This is explanation how we get the total allowance. Hover on each number to get details what does one mean.",
+    "nominal_allowance": "Nominal allowance",
+    "nominal_allowance_tip": "Allowance derived from department current user belongs to.",
+    "carried_over": "Carried over from {{ previous_year }}",
+    "carried_over_tip": "Allowance carried over from previous year. Note: this amount is calculated on the very first day of the year.",
+    "individual_adjustment": "Individual adjustment",
+    "individual_adjustment_tip": "Adjustment to allowance done by admin user.",
+    "start_end_of_employment": "Start/end of employment",
+    "start_end_of_employment_tip": "Automatic adjustment to allowance based on employee's start and end day of employment.",
+    "used_so_far": "Used so far",
+    "used_so_far_tip": "Number of days already taken from allowance.",
+    "no_approved_requests_so_far": "No approved requests so far.",
+    "locked_so_far": "Locked so far",
+    "locked_so_far_tip": "Number of unavailable days in allowance due to accrual nature of vacation entitlement.",
+    "allowance_in": "Allowance in {{current_year}}",
+    "feed_title": "Calendar",
+    "feed_title_tip": "Export absences  to external calendars",
+    "calendar_section_title": "January - December {{current_year}}",
+    "upcoming_months": "Upcoming Months",
+    "more_months": "More...",
+    "less_months": "Less...",
+    "all_my_absences_in": "All my absences in {{current_year}}",
+    "no_leave_requests_yet": "There are no leave requests yet.",
+
+    
+    "pended_revoke": "pended revoke",
+
+    "revoke_tip": "Revoke leave request. Subject of approval.",
+    "cancel_tip": "Cancel leave request"
+}

@@ -1,0 +1,84 @@
+{
+    "scroll_table_horizontally": "Scorri la tabella in orizzontale",
+    "company": "Azienda",
+    "save_changes": "Salva modifiche",
+    "add_new": "Crea nuovo",
+    "date": "Data",
+    "details": "Dettagli",
+    "supervisor": "Responsabile",
+    "department": "Reparto",
+    "days": "giorni",
+    "calendar_week_monday": "L",
+    "calendar_week_tuesday": "M",
+    "calendar_week_wednesday": "M",
+    "calendar_week_thursday": "G",
+    "calendar_week_friday": "V",
+    "calendar_week_saturday": "S",
+    "calendar_week_sunday": "D",
+
+    "save": "Salva",
+    "revoke": "Revoca",
+    "approve": "Approva",
+    "reject": "Rifiuta",
+    "create": "Crea",
+    "cancel": "Annulla",
+    "rejected": "Respinta",
+    "approved": "Approvata",
+    "pending": "In attesa",
+
+    "table_head_dates": "Date (da <i class=\"fa fa-long-arrow-right\"></i> a)",
+    "table_head_type": "Tipo",
+    "table_head_deducted": "Sottratti",
+    "table_head_approved_by": "Approvata da",
+    "table_head_status": "Stato",
+    "table_head_employee": "Impiegato",
+    "table_head_department": "Reparto",
+    "table_head_date_of_request": "Data della richiesta",
+    "table_head_leave_date": "Periodo assenza",
+
+    "header": {
+        "toggle_navigation": "Attiva / Disattiva navigazione",
+        "calendar": "Calendario",
+        "team_view": "Reparti",
+        "employees": "Impiegati",
+        "new_absence": "Nuova assenza",
+
+        "general": "Generali",
+        "departments": "Reparti",
+        "ldap_configuration": "Configurazione LDAP",
+        "api_configuration": "Configurazione API",
+        "import_employees": "Importa impiegati",
+        "emails_audit": "Verifica delle e-mail",
+        "reports": "Report",
+        "requests": "Richieste",
+        "login": "Login",
+        "logout": "Logout",
+        "feeds": "Feeds",
+        "me": "Me"
+    },
+
+    "for_employee": "Per l'impiegato",
+    "leave_type": "Tipologia assenza",
+    "from": "Da",
+    "to": "A",
+    "all_day": "Tutto il giorno",
+    "afternoon": "Pomeriggio",
+    "morning": "Mattina",
+
+    "comment": "Commento (facoltativo)",
+
+    "employee_email": "Email del dipendente",
+    "password": "Password",
+    "forgot_password": "Password dimenticata?",
+    "register_new_company": "Registra una nuova azienda",
+
+    "forgot_password_title": "Password dimenticata",
+    "send_instructions": "Invia le istruzioni",
+
+    "reset_password_title": "Reimposta la password",
+    "new_password": "Nuova password",
+    "confirm_new_password": "Conferma la nuova password"
+
+    
+    
+}
